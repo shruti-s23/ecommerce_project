@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Cutesy Home Decor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🛍️ Shop</h1>
+        <nav>
+            <a href="{% url 'home' %}" class="btn">🏠 Home</a>
+            <a href="{% url 'view_cart' %}" class="btn">🛒 Cart</a>
+        </nav>
+    </header>    
+
+    <section class="product-grid">
+        {% for product in products %}
+        <div class="product">
+            <img src="{% static 'images/decor' %}{{ forloop.counter }}.jpg" alt="{{ product.name }}">
+            <p>{{ product.name }} - ${{ product.price }}</p>
+            <a href="{% url 'product_detail' product.id %}" class="btn">View Details</a>
+            <a href="{% url 'add_to_cart' product.id %}" class="btn">Add to Cart</a>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutesy Home Decor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>✨ Welcome to Cutesy Home Decor! 🏡</h1>
+        <p>Find the most aesthetic and unique decorations for your home.</p>
+        <!-- Banner Image with class banner-img -->
+        <img src="{% static 'images/banner.jpg' %}" alt="Home Decor Banner" class="banner-img">
+        <nav>
+            <a href="{% url 'products_list' %}" class="btn">🛍️ Shop</a>
+            <a href="{% url 'view_cart' %}" class="btn">🛒 Cart</a>
+        </nav>
+    </header>    
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product">
+                <img src="{% static 'images/decor' %}{{ forloop.counter }}.jpg" alt="{{ product.name }}">
+                <p>{{ product.name }} - ${{ product.price|floatformat:2 }}</p>
+                <a href="{% url 'product_detail' product.id %}" class="btn">View</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <button id="backToTop" class="btn">⬆️ Back to Top</button>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 Cutesy Home Decor. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

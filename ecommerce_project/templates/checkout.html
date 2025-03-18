@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🛒 Checkout</h1>
+        <nav>
+            <a href="{% url 'home' %}" class="btn">🏠 Home</a>
+            <a href="{% url 'products_list' %}" class="btn">🛍️ Shop More</a>
+        </nav>
+    </header>
+
+    <section class="checkout-container">
+        {% if cart_items %}
+            <div class="cart-items">
+                {% for item in cart_items %}
+                <div class="cart-item">
+                    <p>
+                        <strong>{{ item.product.name }}</strong> - 
+                        ${{ item.product.price|floatformat:2 }} (x{{ item.quantity }})
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="cart-summary">
+                <p><strong>Total: ${{ total_price|default:"0.00"|floatformat:2 }}</strong></p>
+                <form action="{% url 'order_details' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">✅ Review Order Details</button>
+                </form>                                     
+            </div>
+        {% else %}
+            <p class="empty-cart">Your cart is empty. 🛒</p>
+        {% endif %}
+    </section>
+</body>
+</html>

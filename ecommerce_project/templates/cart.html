@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🛒 Shopping Cart</h1>
+        <nav>
+            <a href="{% url 'home' %}" class="btn">🏠 Home</a>
+            <a href="{% url 'products_list' %}" class="btn">🛍️ Shop More</a>
+        </nav>
+    </header>
+
+    <section class="cart-container">
+        {% if cart_items %}
+            <div class="cart-items">
+                {% for item in cart_items %}
+                    <div class="cart-item">
+                        <p>
+                            <strong>{{ item.product.name }}</strong> - 
+                            ${{ item.product.price|floatformat:2 }} (x{{ item.quantity }})
+                        </p>
+                        <div class="cart-controls">
+                            <form method="POST" action="{% url 'update_cart' item.product.id %}">
+                                {% csrf_token %}
+                                <button type="submit" name="action" value="remove" class="btn remove-btn">🗑️ Remove</button>
+                                <button type="submit" name="action" value="add" class="btn add-btn">➕ Add</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="cart-summary">
+                <p><strong>Total: ${{ total_price|default:"0.00"|floatformat:2 }}</strong></p>
+                <a href="{% url 'checkout' %}" class="btn">✅ Complete Purchase</a>
+            </div>
+        {% else %}
+            <p class="empty-cart">Your cart is empty. 🛒</p>
+        {% endif %}
+    </section>
+</body>
+</html>
