@@ -41,7 +41,7 @@ Below are a few snapshots of the website to showcase its interface and features:
 
 | Homepage | Product Page | Cart Page | Checkout Page |  
 |-----------|--------------|-----------|---------------|  
-| ![Homepage](screenshots/home.png) | ![Product](screenshots/product.png) | ![Cart](screenshots/cart.png) | ![Checkout](screenshots/checkout.png) |  
+| ![Homepage](home.png) | ![Product](product.png) | ![Cart](cart.png) | ![Checkout](checkout.png) |  
 
 ___
 
