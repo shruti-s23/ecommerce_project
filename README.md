@@ -36,7 +36,7 @@ The project follows a modular structure to ensure scalability and maintainabilit
 
 ---
 
-## **Screenshots**  
+## **Website Preview**  
 Below are a few snapshots of the website to showcase its interface and features:  
 
 | Homepage | Product Page | Cart Page | Checkout Page | Confirmation Page |
