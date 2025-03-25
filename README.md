@@ -2,7 +2,6 @@
 
 ## **Project Overview**  
 This project is a **Django-based E-Commerce platform** designed for selling aesthetic home decor items. The website provides users with a seamless shopping experience by offering an intuitive interface for browsing products, viewing detailed descriptions, adding items to the cart, and completing purchases. The primary goal of this project was to create a visually appealing and user-friendly platform with a robust backend.
-Visit http://127.0.0.1:8000/ in your browser to view the website.
 
 ---
 
