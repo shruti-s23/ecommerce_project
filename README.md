@@ -1,7 +1,3 @@
-Here is a clean and professional **README** format for your E-Commerce Website project, without any code sections.  
-
----
-
 # **E-Commerce Website**
 
 ## **Project Overview**  
