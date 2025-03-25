@@ -41,7 +41,7 @@ Below are a few snapshots of the website to showcase its interface and features:
 
 | Homepage | Product Page | Cart Page | Checkout Page | Confirmation Page |
 |-----------|--------------|-----------|---------------|-------------------|
-| ![Homepage](home.png) | ![Product](product.png) | ![Cart](cart.png) | ![Checkout](checkout.png) | ![Confirmation](confirmation.png) |
+| ![Homepage](ecommerce_project/home.png) | ![Product](ecommerce_project/product.png) | ![Cart](ecommerce_project/cart.png) | ![Checkout](ecommerce_project/checkout.png) | ![Confirmation](ecommerce_project/confirmation.png) |
 
 ___
 
